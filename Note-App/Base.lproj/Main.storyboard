@@ -43,7 +43,7 @@
                     <navigationItem key="navigationItem" id="e9r-cQ-MCj">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="square.and.pencil" catalog="system" id="rab-aU-2aQ">
                             <connections>
-                                <segue destination="aRc-fR-d3U" kind="show" id="f5d-jH-2KG"/>
+                                <segue destination="aRc-fR-d3U" kind="show" identifier="Segue.Main.show" id="f5d-jH-2KG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -55,10 +55,10 @@
             </objects>
             <point key="canvasLocation" x="923" y="-173"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Note View Controller-->
         <scene sceneID="Hfx-MQ-Ntc">
             <objects>
-                <viewController id="aRc-fR-d3U" sceneMemberID="viewController">
+                <viewController id="aRc-fR-d3U" customClass="AddNoteViewController" customModule="Note_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u5w-fp-imT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -92,6 +92,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="EVy-dw-Dpm"/>
+                    <connections>
+                        <outlet property="bodyTextView" destination="b9u-a2-fBb" id="wSm-XN-mmr"/>
+                        <outlet property="titleTextField" destination="pYO-4t-q9E" id="vT2-Ah-Lio"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HAS-s0-lXQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -14,7 +14,7 @@ struct Notes: Decodable {
     let date  : String
     let note  : String
     
-    enum codingkeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case id = "_id", title, date, note
     }
 }
