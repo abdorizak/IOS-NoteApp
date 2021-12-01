@@ -8,33 +8,41 @@
 import UIKit
 
 class AddNoteViewController: UIViewController {
-    
     @IBOutlet var titleTextField: UITextField!
     @IBOutlet var bodyTextView: UITextView!
     
     var NoteDetails: Notes?
+    var update: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let deleteBtn = UIBarButtonItem(title: "delete", style: .plain, target: self, action: nil)
-        let saveBtn = UIBarButtonItem(title: "save", style: .plain, target: self, action: #selector(saveNote))
-        navigationItem.rightBarButtonItems = [saveBtn, deleteBtn]
+        guard let noteDetails = NoteDetails else {
+            return
+        }
+        if update == true {
+            titleTextField.text = noteDetails.title
+            bodyTextView.text = noteDetails.note
+        }
+        
     }
-    
-    
-    @objc func saveNote() {
+
+    @IBAction func saveTapped(_ sender: Any){
         let title = titleTextField.text
-        let body = bodyTextView.text
+        let body  = bodyTextView.text
         if (title?.isEmpty)! || (body?.isEmpty)! {
             print("title and body cannot be empty")
             return
         }
-        
         let parameters: [String: String] = ["title": titleTextField.text!,
-                          "note": bodyTextView.text!,
-                                            "date":"\(Date.now.ISO8601Format())"
-        ]
-        NetworkManager.shared.addNotes(parameters: parameters)
+                                            "note": bodyTextView.text!,
+                                            "date":"\(Date.now.ISO8601Format())"]
+        if update == true {
+            guard let notID = NoteDetails else { return }
+            print(notID)
+            NetworkManager.shared.updateNote(parameters: parameters, noteID: notID.id)
+        } else {
+            NetworkManager.shared.addNotes(parameters: parameters)
+        }
+        navigationController?.popViewController(animated: true)
     }
-
 }

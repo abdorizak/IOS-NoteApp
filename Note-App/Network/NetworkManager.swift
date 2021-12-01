@@ -26,4 +26,18 @@ class NetworkManager {
             
         }
     }
+    
+    func updateNote(parameters: [String: String], noteID: String) {
+        let route = apiURL + "/\(noteID)"
+        AF.request(route, method: .put, parameters: parameters, encoding: JSONEncoding.default).response { response in
+            
+        }
+    }
+    
+    func deleteNote(noteID: String) {
+        let route = apiURL + "/\(noteID)"
+        AF.request(route, method: .delete, encoding: JSONEncoding.default).response { response in
+            
+        }
+    }
 }

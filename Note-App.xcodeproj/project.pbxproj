@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		106129AF27564B1500CC513E /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106129AE27564B1500CC513E /* AddNoteViewController.swift */; };
+		106129B1275720D900CC513E /* APIResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106129B0275720D900CC513E /* APIResponses.swift */; };
 		10747A20275605EB00E52EC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10747A1F275605EB00E52EC2 /* AppDelegate.swift */; };
 		10747A22275605EB00E52EC2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10747A21275605EB00E52EC2 /* SceneDelegate.swift */; };
 		10747A24275605EB00E52EC2 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10747A23275605EB00E52EC2 /* NoteViewController.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		106129AE27564B1500CC513E /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
+		106129B0275720D900CC513E /* APIResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponses.swift; sourceTree = "<group>"; };
 		10747A1C275605EB00E52EC2 /* Note-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Note-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		10747A1F275605EB00E52EC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10747A21275605EB00E52EC2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				10747A3C275632A000E52EC2 /* NetworkManager.swift */,
+				106129B0275720D900CC513E /* APIResponses.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				106129AF27564B1500CC513E /* AddNoteViewController.swift in Sources */,
+				106129B1275720D900CC513E /* APIResponses.swift in Sources */,
 				10747A3D275632A000E52EC2 /* NetworkManager.swift in Sources */,
 				10747A24275605EB00E52EC2 /* NoteViewController.swift in Sources */,
 				10747A20275605EB00E52EC2 /* AppDelegate.swift in Sources */,
