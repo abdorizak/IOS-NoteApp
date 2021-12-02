@@ -91,14 +91,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="EVy-dw-Dpm">
-                        <rightBarButtonItems>
-                            <barButtonItem title="save" id="4RM-D4-ysF">
-                                <connections>
-                                    <action selector="saveTapped:" destination="aRc-fR-d3U" id="Dcm-qz-Ndp"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="delete" id="RA1-yH-MQ8"/>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="save" id="4RM-D4-ysF">
+                            <connections>
+                                <action selector="saveTapped:" destination="aRc-fR-d3U" id="Dcm-qz-Ndp"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="bodyTextView" destination="b9u-a2-fBb" id="wSm-XN-mmr"/>

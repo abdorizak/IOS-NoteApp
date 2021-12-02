@@ -12,7 +12,6 @@ protocol DataDelegate {
 }
 
 class NoteViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
     enum segue {
         static let main = "Segue.Main.show"
     }
@@ -29,6 +28,14 @@ class NoteViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate   = self
         NetworkManager.shared.delegate = self
         NetworkManager.shared.fetNotes()
+//        NetworkManager.shared.fetNotes { [weak self] result in
+//            switch result {
+//            case .success(let data):
+//                print("data: ", data)
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
         
     }
     
@@ -51,7 +58,7 @@ class NoteViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.textLabel?.text = notes[indexPath.row].title
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedNotes = notes[indexPath.row]
         performSegue(withIdentifier: segue.main, sender: selectedNotes)
@@ -82,7 +89,7 @@ extension NoteViewController: DataDelegate {
         do{
             let result = try JSONDecoder().decode([Notes].self, from: newNotes.data(using: .utf8)!)
             self.notes = result
-            print(result)
+//            print(result)
             
         } catch {
             print(error)

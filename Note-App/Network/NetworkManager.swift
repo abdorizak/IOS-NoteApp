@@ -8,12 +8,26 @@
 import UIKit
 import Alamofire
 
+enum NetworkError: Error {
+    case invalidResponse
+}
 class NetworkManager {
     static let shared = NetworkManager()
     var delegate: DataDelegate?
     let apiURL = "http://192.168.1.9:6000/api/note"
     
-     func fetNotes() {
+    func fetNotes(completionHandler: @escaping (Result<String, NetworkError>) -> Void) {
+        AF.request(apiURL).response { response in
+            guard let data = response.data else {
+                completionHandler(.failure(.invalidResponse))
+                return
+            }
+            let resultData = String(data: data, encoding: .utf8)
+            completionHandler(.success(resultData!))
+        }
+    }
+
+    func fetNotes() {
         AF.request(apiURL).response { [weak self] response in
             guard let data = response.data else { return }
             let resultData = String(data: data, encoding: .utf8)
